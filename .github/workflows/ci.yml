@@ -1,0 +1,13 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  gitleaks:
+    uses: COMPOMML/.github/.github/workflows/gitleaks.yml@main
