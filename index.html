@@ -3,25 +3,34 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src https://api.github.com; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; img-src 'self' data:; connect-src 'self' https://api.github.com; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex, nofollow">
-<title>COMPO Status</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%2314181d' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%232a78d6'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="style.css">
-<script src="app.js" defer></script>
+<title>COMPO Brain</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%2305070d' stroke='%23ffd479' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%237be495'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+:root{color-scheme:dark}
+body{margin:0;background:#05070d;color:#e8ecf6;font:15px/1.5 "Familjen Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+:focus-visible{outline:2px solid #ffd479;outline-offset:2px}
+a{color:#ffd479}
+.signin{max-width:560px;margin:8vh auto 40px;background:#0a0e18;border:1px solid #1b2236;border-radius:14px;padding:24px}
+.signin h1{margin:0 0 8px;font-size:26px;line-height:1.15}
+.signin p{margin:0 0 12px;color:#c4cbdd}
+.signin ol{margin:0 0 16px;padding-left:20px;color:#c4cbdd;font-size:14px;display:grid;gap:5px}
+.signin form{display:grid;gap:12px}
+.signin label{display:grid;gap:4px;font-size:13px;font-weight:700}
+.signin .row{display:flex;gap:8px;align-items:center;font-weight:500;color:#c4cbdd;cursor:pointer}
+.signin input[type=password]{font:15px ui-monospace,Consolas,monospace;color:#e8ecf6;background:#05070d;border:1px solid #1b2236;border-radius:8px;padding:9px 11px;width:100%;box-sizing:border-box}
+.signin input[type=checkbox]{accent-color:#ffd479;width:17px;height:17px;margin:0}
+.signin button{justify-self:start;background:#ffd479;color:#1a1500;border:0;border-radius:8px;padding:9px 18px;font:700 14px "Familjen Grotesk",system-ui,sans-serif;cursor:pointer}
+.signin .fine{font-size:13px;color:#8f98ae;margin:12px 0 0}
+.signin .err{color:#ff6b6b;font-weight:700;margin:0}
+.loading{max-width:560px;margin:8vh auto;color:#8f98ae}
+</style>
+<script src="shell.js" defer></script>
 </head>
 <body>
-<header class="bar">
-  <div class="bar-in">
-    <div class="brand"><span class="mark" aria-hidden="true"></span><span>COMPO Status</span></div>
-    <div class="bar-right" id="bar-right"></div>
-  </div>
-  <nav class="tabs" id="tabs" aria-label="Views" hidden></nav>
-</header>
-<main id="app" class="wrap" tabindex="-1">
-  <p class="loading">Loading…</p>
-</main>
-<footer class="foot wrap" id="foot"></footer>
+<main id="shell"><p class="loading">Loading…</p></main>
 </body>
 </html>
